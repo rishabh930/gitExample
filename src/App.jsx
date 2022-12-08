@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import './App.css';
+import Chessbord from './Component/Chessbord';
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <div>
-      <h1>Git example</h1>
-      <h1>branch</h1>
+      <Chessbord />
     </div>
   );
 }
