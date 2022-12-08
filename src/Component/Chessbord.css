@@ -7,12 +7,12 @@
   display: flex;
 }
 .white-block {
-  background-color: white;
+  background-color: rgb(232, 232, 232);
   width: 75px;
   height: 75px;
 }
 .balck-block {
-  background-color: black;
+  background-color: rgb(53, 133, 67);
   width: 75px;
   height: 75px;
 }
