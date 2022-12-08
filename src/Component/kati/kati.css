@@ -1,0 +1,17 @@
+.pown {
+  width: 13px;
+  height: 35px;
+  background-color: black;
+}
+.pown-main {
+  position: relative;
+  left: 33%;
+  top: 13px;
+}
+.botton-pice {
+  width: 43px;
+  height: 13px;
+  background-color: black;
+  position: relative;
+  right: 15px;
+}
