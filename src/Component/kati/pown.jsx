@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './kati.css';
+import pawn from '../../assets/pawn_b.png';
 
 const Pown = () => {
   const [active, setactive] = useState(false);
@@ -18,15 +19,10 @@ const Pown = () => {
     console.log(e.target.innrHTML);
   };
   return (
-    <div className="pown-main" onClick={onclickpice}>
-      <div
-        className="pown"
-        style={{ backgroundColor: active ? 'blue' : 'black' }}
-      ></div>
-      <div
-        className="botton-pice"
-        style={{ backgroundColor: active ? 'blue' : 'black' }}
-      ></div>
+    <div>
+      <div>
+        <img src={pawn} alt="pawn-b" onClick={onclickpice} />
+      </div>
     </div>
   );
 };
