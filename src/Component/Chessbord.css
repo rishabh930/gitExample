@@ -1,0 +1,18 @@
+.ChessBord-main {
+  background-color: black;
+  width: 600px;
+  height: 600px;
+}
+.first-line {
+  display: flex;
+}
+.white-block {
+  background-color: white;
+  width: 75px;
+  height: 75px;
+}
+.balck-block {
+  background-color: black;
+  width: 75px;
+  height: 75px;
+}
