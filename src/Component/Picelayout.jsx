@@ -3,6 +3,7 @@ import {
   blackbishop,
   blackKing,
   blackKinght,
+  blackpawn,
   blackQueen,
   blackrook,
 } from './kati/Blackpice';
@@ -16,13 +17,11 @@ const Picelayout = () => {
   console.log(WPice);
   for (let y = value.length - 1; y >= 0; y--) {
     for (let i = 0; i <= value2.length - 1; i++) {
-      if (y === value.length - 1 && i === 0) {
-        block.push(
-          <div>
-            <img src={blackrook.img} />
-          </div>
-        );
-      }
+      block[9 - 17] = (
+        <div>
+          <img src={blackpawn.img} />;
+        </div>
+      );
     }
   }
 

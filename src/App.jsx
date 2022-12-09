@@ -5,6 +5,7 @@ import Chessbord from './Component/Chessbord';
 import DargandDrop from './Eaxmple/DargandDrop';
 import { Chessbord2 } from './Component/Chessbord2';
 import Picelayout from './Component/Picelayout';
+import Pawn from './Eaxmple/pawn';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -15,6 +16,7 @@ function App() {
       <Chessbord2 />
 
       <DargandDrop />
+      <Pawn />
     </div>
   );
 }

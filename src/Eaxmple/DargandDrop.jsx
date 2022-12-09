@@ -31,6 +31,7 @@ const DargandDrop = () => {
     else setActive(false);
   };
 
+  const ar = ['2', '3', '4', '5'];
   const piceM = () => {
     bock[0] = p.img;
   };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Chessbord.css';
 import BishopB from './kati/BishopB';
 import BishopW from './kati/BishopW';
@@ -23,6 +23,8 @@ import RookW from './kati/RookW';
 import { Wpawn } from './kati/WhitePice';
 
 const Chessbord = () => {
+  const [balckmove, setBalckMove] = useState();
+
   const allowDrop = (e) => {
     e.preventDefault();
   };
@@ -39,10 +41,8 @@ const Chessbord = () => {
   };
 
   const pawnMove = (id) => {
-    console.log(id);
-  
-
-
+    const data = document.getElementById(id);
+    console.log(data);
   };
   return (
     <div className="ChessBord-main">
@@ -173,20 +173,12 @@ const Chessbord = () => {
           onDrop={drop}
           onDragOver={allowDrop}
         >
-          <div
-            draggable="true"
-            id="2"
+          <img
+            src={blackpawn.img}
+            id={`${blackpawn.id}_2`}
             onDragStart={drag}
-            onDrop={drop}
-            onDragOver={allowDrop}
-          >
-            <img
-              src={blackpawn.img}
-              id={`${blackpawn.id}_2`}
-              onDragStart={drag}
-              draggable="true"
-            />
-          </div>
+            draggable="true"
+          />
         </div>
         <div
           id="7c"
