@@ -4,7 +4,7 @@ const PawnW = () => {
   return (
     <div>
       <div>
-        <img src={pawn} />
+        <img src={pawn} id="ee" />
       </div>
     </div>
   );

@@ -1,18 +1,30 @@
 .ChessBord-main {
   background-color: black;
-  width: 600px;
-  height: 600px;
+  width: 800px;
+  height: 800px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.ChessBord-layout {
+  width: 800px;
+  height: 800px;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 0;
+  position: relative;
+  top: -800px;
+  background-color: rgba(0, 255, 255, 0.368);
 }
 .first-line {
   display: flex;
 }
 .white-block {
   background-color: rgb(232, 232, 232);
-  width: 75px;
-  height: 75px;
+  width: 100px;
+  height: 100px;
 }
 .balck-block {
   background-color: rgb(53, 133, 67);
-  width: 75px;
-  height: 75px;
+  width: 100px;
+  height: 100px;
 }

@@ -2,6 +2,14 @@ import React from 'react';
 import './Chessbord.css';
 import BishopB from './kati/BishopB';
 import BishopW from './kati/BishopW';
+import {
+  blackbishop,
+  blackKing,
+  blackKinght,
+  blackpawn,
+  blackQueen,
+  blackrook,
+} from './kati/Blackpice';
 import KingB from './kati/KingB';
 import KingW from './kati/KingW';
 import KnightB from './kati/KnightB';
@@ -12,150 +20,622 @@ import QueenW from './kati/QueenW';
 import QueenB from './kati/QweenB';
 import RookB from './kati/RookB';
 import RookW from './kati/RookW';
+import { Wpawn } from './kati/WhitePice';
+
 const Chessbord = () => {
+  const allowDrop = (e) => {
+    e.preventDefault();
+  };
+  const drag = (e) => {
+    e.dataTransfer.setData('text', e.target.id);
+    console.log(e.target.id);
+  };
+  const drop = (e) => {
+    e.preventDefault();
+    var data = e.dataTransfer.getData('text');
+
+    e.target.appendChild(document.getElementById(data));
+    console.log(document.getElementById(data));
+  };
+
+  const pawnMove = (id) => {
+    console.log(id);
+  
+
+
+  };
   return (
     <div className="ChessBord-main">
       <div id="8" className="first-line">
-        <div id="81" className="white-block">
-          <RookB />
+        <div
+          id="8a"
+          className="white-block"
+          onDrop={drop}
+          onDragOver={allowDrop}
+        >
+          <img
+            src={blackrook.img}
+            id={blackrook.id}
+            onDragStart={drag}
+            draggable="true"
+          />
         </div>
-        <div id="82" className="balck-block">
-          <KnightB />
+        <div
+          id="8b"
+          className="balck-block"
+          onDrop={drop}
+          onDragOver={allowDrop}
+        >
+          <img
+            src={blackbishop.img}
+            id={blackbishop.id}
+            onDragStart={drag}
+            draggable="true"
+          />
         </div>
-        <div id="83" className="white-block">
-          <BishopB />
+        <div
+          id="8c"
+          className="white-block"
+          onDrop={drop}
+          onDragOver={allowDrop}
+        >
+          <img
+            src={blackKinght.img}
+            id={blackKinght.id}
+            onDragStart={drag}
+            draggable="true"
+          />
         </div>
-        <div id="84" className="balck-block">
-          <QueenB />
+        <div
+          id="8d"
+          className="balck-block"
+          onDrop={drop}
+          onDragOver={allowDrop}
+        >
+          <img
+            src={blackQueen.img}
+            id={blackQueen.id}
+            onDragStart={drag}
+            draggable="true"
+          />
         </div>
-        <div id="85" className="white-block">
-          <KingB />
+        <div
+          id="8e"
+          className="white-block"
+          onDrop={drop}
+          onDragOver={allowDrop}
+        >
+          <img
+            src={blackKing.img}
+            id={blackKing.id}
+            onDragStart={drag}
+            draggable="true"
+          />
         </div>
-        <div id="86" className="balck-block">
-          <BishopB />
+        <div
+          id="8f"
+          className="balck-block"
+          onDrop={drop}
+          onDragOver={allowDrop}
+        >
+          <img
+            src={blackKinght.img}
+            id={`${blackKinght.id}_2`}
+            onDragStart={drag}
+            draggable="true"
+          />
         </div>
-        <div id="87" className="white-block">
-          <KnightB />
+        <div
+          id="8g"
+          className="white-block"
+          onDrop={drop}
+          onDragOver={allowDrop}
+        >
+          <img
+            src={blackbishop.img}
+            id={`${blackbishop.id}_2`}
+            onDragStart={drag}
+            draggable="true"
+          />
         </div>
-        <div id="88" className="balck-block">
-          <RookB />
+        <div
+          id="8h"
+          className="balck-block"
+          onDrop={drop}
+          onDragOver={allowDrop}
+        >
+          <img
+            src={blackrook.img}
+            id={`${blackrook.id}_2`}
+            onDragStart={drag}
+            draggable="true"
+          />
         </div>
       </div>
       <div id="7" className="first-line">
-        <div id="71" className="balck-block">
-          <Pown />
+        <div
+          id="7a"
+          className="balck-block"
+          onDrop={drop}
+          onDragOver={allowDrop}
+        >
+          <img
+            src={blackpawn.img}
+            id={`${blackpawn.id}_1`}
+            onDragStart={drag}
+            draggable="true"
+            onClick={() => pawnMove(`${blackpawn.id}_1`)}
+          />
         </div>
-        <div id="72" className="white-block">
-          <Pown />
+        <div
+          id="7b"
+          className="white-block"
+          onDrop={drop}
+          onDragOver={allowDrop}
+        >
+          <div
+            draggable="true"
+            id="2"
+            onDragStart={drag}
+            onDrop={drop}
+            onDragOver={allowDrop}
+          >
+            <img
+              src={blackpawn.img}
+              id={`${blackpawn.id}_2`}
+              onDragStart={drag}
+              draggable="true"
+            />
+          </div>
         </div>
-        <div id="73" className="balck-block">
-          <Pown />
+        <div
+          id="7c"
+          className="balck-block"
+          onDrop={drop}
+          onDragOver={allowDrop}
+        >
+          <img
+            src={blackpawn.img}
+            id={`${blackpawn.id}_3`}
+            onDragStart={drag}
+            draggable="true"
+          />
         </div>
-        <div id="74" className="white-block">
-          <Pown />
+        <div
+          id="7d"
+          className="white-block"
+          onDrop={drop}
+          onDragOver={allowDrop}
+        >
+          <img
+            src={blackpawn.img}
+            id={`${blackpawn.id}_4`}
+            onDragStart={drag}
+            draggable="true"
+          />
         </div>
-        <div id="75" className="balck-block">
-          <Pown />
+        <div
+          id="7e"
+          className="balck-block"
+          onDrop={drop}
+          onDragOver={allowDrop}
+        >
+          <img
+            src={blackpawn.img}
+            id={`${blackpawn.id}_4`}
+            onDragStart={drag}
+            draggable="true"
+          />
         </div>
-        <div id="76" className="white-block">
-          <Pown />
+        <div
+          id="7f"
+          className="white-block"
+          onDrop={drop}
+          onDragOver={allowDrop}
+        >
+          <img
+            src={blackpawn.img}
+            id={`${blackpawn.id}_5`}
+            onDragStart={drag}
+            draggable="true"
+          />
         </div>
-        <div id="77" className="balck-block">
-          <Pown />
+        <div
+          id="7g"
+          className="balck-block"
+          onDrop={drop}
+          onDragOver={allowDrop}
+        >
+          <img
+            src={blackpawn.img}
+            id={`${blackpawn.id}_6`}
+            onDragStart={drag}
+            draggable="true"
+          />
         </div>
-        <div id="78" className="white-block">
-          <Pown />
+        <div
+          id="7h"
+          className="white-block"
+          onDrop={drop}
+          onDragOver={allowDrop}
+        >
+          <img
+            src={blackpawn.img}
+            id={`${blackpawn.id}_7`}
+            onDragStart={drag}
+            draggable="true"
+          />
         </div>
       </div>
       <div id="6" className="first-line">
-        <div id="61" className="white-block"></div>
-        <div id="62" className="balck-block"></div>
-        <div id="63" className="white-block"></div>
-        <div id="64" className="balck-block"></div>
-        <div id="65" className="white-block"></div>
-        <div id="66" className="balck-block"></div>
-        <div id="67" className="white-block"></div>
-        <div id="68" className="balck-block"></div>
+        <div
+          id="6a"
+          className="white-block"
+          onDrop={drop}
+          onDragOver={allowDrop}
+        ></div>
+        <div
+          id="6b"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="balck-block"
+        ></div>
+        <div
+          id="6e"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="white-block"
+        ></div>
+        <div
+          id="6d"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="balck-block"
+        ></div>
+        <div
+          id="6e"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="white-block"
+        ></div>
+        <div
+          id="6f"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="balck-block"
+        ></div>
+        <div
+          id="6g"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="white-block"
+        ></div>
+        <div
+          id="6h"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="balck-block"
+        ></div>
       </div>
       <div id="5" className="first-line">
-        <div id="51" className="balck-block"></div>
-        <div id="52" className="white-block"></div>
-        <div id="53" className="balck-block"></div>
-        <div id="54" className="white-block"></div>
-        <div id="55" className="balck-block"></div>
-        <div id="56" className="white-block"></div>
-        <div id="57" className="balck-block"></div>
-        <div id="58" className="white-block"></div>
+        <div
+          id="5a"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="balck-block"
+        ></div>
+        <div
+          id="5b"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="white-block"
+        ></div>
+        <div
+          id="5c"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="balck-block"
+        ></div>
+        <div
+          id="5d"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="white-block"
+        ></div>
+        <div
+          id="5e"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="balck-block"
+        ></div>
+        <div
+          id="5f"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="white-block"
+        ></div>
+        <div
+          id="5g"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="balck-block"
+        ></div>
+        <div
+          id="5h"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="white-block"
+        ></div>
       </div>
       <div id="4" className="first-line">
-        <div id="41" className="white-block"></div>
-        <div id="42" className="balck-block"></div>
-        <div id="43" className="white-block"></div>
-        <div id="44" className="balck-block"></div>
-        <div id="45" className="white-block"></div>
-        <div id="46" className="balck-block"></div>
-        <div id="47" className="white-block"></div>
-        <div id="48" className="balck-block"></div>
+        <div
+          id="4a"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="white-block"
+        ></div>
+        <div
+          id="4b"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="balck-block"
+        ></div>
+        <div
+          id="4c"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="white-block"
+        ></div>
+        <div
+          id="4d"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="balck-block"
+        ></div>
+        <div
+          id="4e"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="white-block"
+        ></div>
+        <div
+          id="4f"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="balck-block"
+        ></div>
+        <div
+          id="4g"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="white-block"
+        ></div>
+        <div
+          id="4h"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="balck-block"
+        ></div>
       </div>
       <div id="3" className="first-line">
-        <div id="31" className="balck-block"></div>
-        <div id="32" className="white-block"></div>
-        <div id="33" className="balck-block"></div>
-        <div id="34" className="white-block"></div>
-        <div id="35" className="balck-block"></div>
-        <div id="36" className="white-block"></div>
-        <div id="37" className="balck-block"></div>
-        <div id="38" className="white-block"></div>
+        <div
+          id="3a"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="balck-block"
+        ></div>
+        <div
+          id="3b"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="white-block"
+        ></div>
+        <div
+          id="3c"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="balck-block"
+        ></div>
+        <div
+          id="3d"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="white-block"
+        ></div>
+        <div
+          id="3e"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="balck-block"
+        ></div>
+        <div
+          id="3f"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="white-block"
+        ></div>
+        <div
+          id="3g"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="balck-block"
+        ></div>
+        <div
+          id="3h"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="white-block"
+        ></div>
       </div>
       <div id="2" className="first-line">
-        <div id="21" className="white-block">
-          <PawnW />
+        <div
+          id="2a"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="white-block"
+        >
+          <img
+            src={Wpawn.img}
+            id={`${Wpawn.id}_1`}
+            onDragStart={drag}
+            draggable="true"
+          />
         </div>
-        <div id="22" className="balck-block">
-          <PawnW />
+        <div
+          id="2b"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="balck-block"
+        >
+          <img
+            src={Wpawn.img}
+            id={`${Wpawn.id}_2`}
+            onDragStart={drag}
+            draggable="true"
+          />
         </div>
-        <div id="23" className="white-block">
-          <PawnW />
+        <div
+          id="2c"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="white-block"
+        >
+          <img
+            src={Wpawn.img}
+            id={`${Wpawn.id}_3`}
+            onDragStart={drag}
+            draggable="true"
+          />
         </div>
-        <div id="24" className="balck-block">
-          <PawnW />
+        <div
+          id="2d"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="balck-block"
+        >
+          <img
+            src={Wpawn.img}
+            id={`${Wpawn.id}_4`}
+            onDragStart={drag}
+            draggable="true"
+          />
         </div>
-        <div id="25" className="white-block">
-          <PawnW />
+        <div
+          id="2e"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="white-block"
+        >
+          <img
+            src={Wpawn.img}
+            id={`${Wpawn.id}_5`}
+            onDragStart={drag}
+            draggable="true"
+          />
         </div>
-        <div id="26" className="balck-block">
-          <PawnW />
+        <div
+          id="2f"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="balck-block"
+        >
+          <img
+            src={Wpawn.img}
+            id={`${Wpawn.id}_6`}
+            onDragStart={drag}
+            draggable="true"
+          />
         </div>
-        <div id="27" className="white-block">
-          <PawnW />
+        <div
+          id="2g"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="white-block"
+        >
+          <img
+            src={Wpawn.img}
+            id={`${Wpawn.id}_7`}
+            onDragStart={drag}
+            draggable="true"
+          />
         </div>
-        <div id="28" className="balck-block">
-          <PawnW />
+        <div
+          id="2h"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="balck-block"
+        >
+          <img
+            src={Wpawn.img}
+            id={`${Wpawn.id}_8`}
+            onDragStart={drag}
+            draggable="true"
+          />
         </div>
       </div>
       <div id="8" className="first-line">
-        <div id="81" className="balck-block">
+        <div
+          id="8a"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="balck-block"
+        >
           <RookW />
         </div>
-        <div id="82" className="white-block">
+        <div
+          id="8b"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="white-block"
+        >
           <KnightW />
         </div>
-        <div id="8c" className="balck-block">
+        <div
+          id="8c"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="balck-block"
+        >
           <BishopW />
         </div>
-        <div id="84" className="white-block">
+        <div
+          id="8d"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="white-block"
+        >
           <QueenW />
         </div>
-        <div id="85" className="balck-block">
+        <div
+          id="8e"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="balck-block"
+        >
           <KingW />
         </div>
-        <div id="86" className="white-block">
+        <div
+          id="8f"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="white-block"
+        >
           <BishopW />
         </div>
-        <div id="87" className="balck-block">
+        <div
+          id="8g"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="balck-block"
+        >
           <KnightW />
         </div>
-        <div id="88" className="white-block">
+        <div
+          id="8h"
+          onDrop={drop}
+          onDragOver={allowDrop}
+          className="white-block"
+        >
           <RookW />
         </div>
       </div>
