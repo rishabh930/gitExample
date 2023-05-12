@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import './Chessbord.css';
-import BishopB from './kati/BishopB';
-import BishopW from './kati/BishopW';
+import React, { useState } from "react";
+import "./Chessbord.css";
+import BishopB from "./kati/BishopB";
+import BishopW from "./kati/BishopW";
 import {
   blackbishop,
   blackKing,
@@ -9,32 +9,32 @@ import {
   blackpawn,
   blackQueen,
   blackrook,
-} from './kati/Blackpice';
-import KingB from './kati/KingB';
-import KingW from './kati/KingW';
-import KnightB from './kati/KnightB';
-import KnightW from './kati/KnightW';
-import PawnW from './kati/PawnW';
-import Pown from './kati/pown';
-import QueenW from './kati/QueenW';
-import QueenB from './kati/QweenB';
-import RookB from './kati/RookB';
-import RookW from './kati/RookW';
-import { Wpawn } from './kati/WhitePice';
+} from "./kati/Blackpice";
+import KingB from "./kati/KingB";
+import KingW from "./kati/KingW";
+import KnightB from "./kati/KnightB";
+import KnightW from "./kati/KnightW";
+import PawnW from "./kati/PawnW";
+import Pown from "./kati/pown";
+import QueenW from "./kati/QueenW";
+import QueenB from "./kati/QweenB";
+import RookB from "./kati/RookB";
+import RookW from "./kati/RookW";
+import { Wpawn } from "./kati/WhitePice";
 
 const Chessbord = () => {
-  const [balckmove, setBalckMove] = useState();
+  // const [balckmove, setBalckMove] = useState();
 
   const allowDrop = (e) => {
     e.preventDefault();
   };
   const drag = (e) => {
-    e.dataTransfer.setData('text', e.target.id);
+    e.dataTransfer.setData("text", e.target.id);
     console.log(e.target.id);
   };
   const drop = (e) => {
     e.preventDefault();
-    var data = e.dataTransfer.getData('text');
+    var data = e.dataTransfer.getData("text");
 
     e.target.appendChild(document.getElementById(data));
     console.log(document.getElementById(data));
